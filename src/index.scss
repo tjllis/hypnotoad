@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "./variables.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: bold;
+}
+
+.flex-center,
+body,
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  overflow: hidden;
+  min-height: 100dvh;
+  height: 100%;
+  background-color: var(--purple);
+}

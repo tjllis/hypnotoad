@@ -1,0 +1,153 @@
+
+
+@property --offset {
+		syntax: '<length>';
+		inherits: false;
+		initial-value: 0px;
+}
+
+.hypnoContainer {
+  // @include flex-center;
+	position: relative;
+	height: 70dvh;
+  aspect-ratio: 1/1;
+  background: var(--black);
+	border-radius: 15%;
+  overflow: hidden;
+}
+
+.circles {
+	position: absolute;
+	width: 100%;
+	aspect-ratio: 1/1;
+	background: repeating-radial-gradient(
+		circle,
+		var(--yellow) calc(0px + var(--offset)),
+		var(--yellow) calc(50px + var(--offset)),
+		var(--green) calc(50px + var(--offset)),
+		var(--red) calc(100px + var(--offset))
+	);
+	background-position: center;
+	animation: hypno 1.5s linear infinite;
+}
+
+.toadContainer {
+	// @include flex-center;
+	flex-direction: column;
+	gap: 50px;
+	position: absolute;
+	width: 70%;
+
+	img, button {
+		width: 70%;
+		z-index: 1;
+	}
+
+	button {
+		background-color: var(--purple);
+		color: var(--green);
+		font-size: 1.5rem;
+		border: solid 5px var(--red);
+		border-radius: 20px;
+		height: 50px;
+		cursor: pointer;
+		animation: wave 1.5s ease-in-out infinite alternate;
+
+		&:hover {
+			animation-play-state: paused;
+			filter: brightness(1.5) contrast(1.2);
+		}
+
+		&:active {
+			filter: brightness(2) contrast(1.5);
+			transform: scale(0.95);
+		}
+	}
+}
+
+.leftEye, .rightEye {
+	position: absolute;
+	width: 9%;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: var(--green);
+
+}
+
+.pupil {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 15px;
+	border-radius: 10px;
+	transform: translate(-50%, -50%);
+	background-color: #000;
+	animation: pupilChange 0.5s ease-in-out infinite alternate;
+}
+
+.leftEye {
+	top: 1.5%;
+	left: 54%;
+
+	.pupil {
+		width: 70%;
+	}
+}
+
+.rightEye {
+	top: 3.5%;
+	left: 70.2%;
+
+	.pupil {
+		width: 20%;
+		animation-name: pupilChangeRev;
+	}
+}
+
+@keyframes hypno {
+	0% {
+		--offset: 0px;
+	}
+	100% {
+		--offset: 100px;
+	}
+}
+
+@keyframes wave {
+	from { scale: 1; }
+	to { scale: 1.2; }
+}
+
+@keyframes pupilChange {
+	from { width: 70%; }
+	to { width: 20%; }
+}
+
+@keyframes pupilChangeRev {
+	from { width: 20%; }
+	to { width: 70%; }
+}
+
+@media (max-width: 760px) {
+	.hypnoContainer {
+		width: 100dvw;
+		height: 100dvh;
+		border-radius: 0;
+
+		.circles {
+			height: 100%;
+		}
+	}
+	.toadContainer {
+		gap: 20px;
+
+		button {
+			font-size: 1rem;
+		}
+	}
+	.pupil {
+		height: 7px;
+		border-radius: 5px;
+	}
+}
