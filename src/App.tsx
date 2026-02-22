@@ -17,10 +17,7 @@ function App() {
           <button
             className={style.btn}
             onClick={() =>
-              window.open(
-                "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                "_blank",
-              )
+              window.open("https://i.giphy.com/YZOsKxJfmvzG0.webp", "_blank")
             }
           >
             Accept me to JetBrains
