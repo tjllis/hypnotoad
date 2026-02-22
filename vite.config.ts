@@ -8,9 +8,8 @@ export default defineConfig({
     devSourcemap: true,
   },
   build: {
-    sourcemap: "inline",
+    sourcemap: "hidden",
     cssCodeSplit: true,
     // minify: false,
-    assetsInlineLimit: 0,
   },
 });
