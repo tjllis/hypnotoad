@@ -2,8 +2,6 @@
 
 You can't say no.
 
----
-
 ## 🚀 Setup & Run
 
 ### Prerequisites
@@ -36,8 +34,6 @@ pnpm run dev
 pnpm build
 ```
 
----
-
 ## 🔄 How CSS is Transformed
 
 The styles are written using SCSS and CSS Modules. Since browsers can't read SCSS files directly, Vite transforms them into standard CSS:
@@ -68,8 +64,6 @@ The styles are written using SCSS and CSS Modules. Since browsers can't read SCS
   filter: brightness(1.5);
 }
 ```
-
----
 
 ## 📂 CSS & Source Maps
 
@@ -114,8 +108,6 @@ If these settings were turned off, your experience in the browser's **Styles** t
 
 - **With Source Maps:** You see `App.module.scss:15` (Direct link to my source code).
 - **Without Source Maps:** You would only see `index.css` or `<style>`. All properties would appear as a flat list, and you wouldn't know which SCSS file or nested rule they came from.
-
----
 
 **Wait, are there other map types?**
 
