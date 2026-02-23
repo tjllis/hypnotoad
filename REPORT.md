@@ -38,20 +38,28 @@ This element was selected for audit because its final style is a complex interse
 
 ### 3. `border` & `border-radius` (Shorthand Expansion)
 
-**Computed State:** 17 individual longhand properties (top, right, bottom, left, style, width, color, etc.) for `border` and 4 individual properties for `border-radius`.
+**Computed State:** 17 individual longhand properties (top, right, bottom, left, style, width, color, etc.) for `border` and 4 individual properties for `border-radius`, corresponding to each side.
 
 **Authored Rule:** `border: solid 5px var(--red);` (`App.module.scss:43`)
 
 **Observation:** One authored line in SCSS expands into a massive list of properties in the Computed tab, all correctly pointing back to the same source line.
 
-### 4. `animation` & `animation-name` (Identity Transformation)
+### 4. `animation` (Shorthand Expansion & Identity Transformation)
 
-**Computed State:** `_wave_14v71_1` or `@keyframes_wave_14v71_1` in **Styles** tab
-`animation` property is splitted into 11 individual properties (includind `animation-name`) featuring those derived from the authored code, as well as properties defined implicitly by the browser (e.g. `animation-range-start`, `animation-range-end`).
+**Computed State:** `_wave_14v71_1` or `@keyframes_wave_14v71_1` in **Styles** panel
+`animation` property is splitted into 11 individual properties featuring those derived from the authored code, as well as properties defined implicitly by the browser (e.g. `animation-range-start`, `animation-range-end`).
 
 **Authored Rule:** `animation: wave 1.5s ease-in-out infinite alternate` (`App.module.scss:43`)
 
 **Observation:** CSS Modules has hashed the animation name. While the link takes us to the word `wave` in the source, the browser reports the hashed ID.
+
+### 5. `width` (Unit conversion)
+
+**Computed State:** `170.023px` Maps back to the percentage value in SCSS.
+
+**Authored Rule:** `width: 70%` (`App.module.scss:43`)
+
+**Observation:** Unlike animated properties (`scale`), this value remains static in the Computed tab. It demonstrates how the browser calculates relative units (%) into precise pixel values based on the parent container.
 
 ## 🛠 Source Mapping Nuances
 
