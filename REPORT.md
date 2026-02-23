@@ -20,9 +20,7 @@ This element was selected for audit because its final style is a complex interse
 
 **Computed State:** `rgb(53, 6, 62)` / `rgb(197, 174, 38)`
 
-**Styles Panel:** Correctly identifies usage of `var(--purple)` and `var(--green)`.
-
-**Traceability:** The source map successfully links to `App.module.scss:43`.
+**Styles Panel:** Correctly identifies usage of `var(--purple)` and `var(--green)` (`App.module.scss:43`).
 
 **Observation:** While the link identifies the usage point, the definition requires a second-level hop. DevTools bridges this by making the variable name clickable, leading to `variables.css:1`. This confirms that Source Maps handle the first hop, but the browser handles the variable resolution.
 
@@ -30,9 +28,7 @@ This element was selected for audit because its final style is a complex interse
 
 **Computed State:** `24px`
 
-**Winning Rule:** `1.5rem` (`App.module.scss:43`)
-
-**Overridden Rule:** `1rem` (`App.module.scss:154` via `@media`)
+**Authored Rule:**`font-size: 1.5rem` (`App.module.scss:43`), `font-size: 1rem` (`App.module.scss:154` via `@media`)
 
 **Observation:** We can see exactly which line of the original SCSS is winning the cascade at the current viewport width, and which line is being suppressed by the media query.
 

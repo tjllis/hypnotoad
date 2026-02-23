@@ -34,10 +34,13 @@
   position: absolute;
   width: 70%;
 
-  img,
-  button {
-    width: 70%;
+  img {
     z-index: 1;
+  }
+
+  img,
+  .btn {
+    width: 70%;
   }
 
   .btn {
@@ -45,8 +48,11 @@
     color: var(--green);
     font-size: 1.5rem;
     border: solid 5px var(--red);
-    border-radius: 20px;
-    height: 50px;
+    border-radius: 30px;
+    min-width: 240px;
+    max-width: fit-content;
+    line-height: 1.2;
+    padding: 10px 15px;
     cursor: pointer;
     animation: wave 1.5s ease-in-out infinite alternate;
 
@@ -153,6 +159,7 @@
 
     .btn {
       font-size: 1rem;
+      padding: 7px 10px;
     }
   }
   .pupil {
