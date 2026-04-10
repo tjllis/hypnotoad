@@ -20,7 +20,7 @@ function App() {
               window.open("https://i.giphy.com/YZOsKxJfmvzG0.webp", "_blank")
             }
           >
-            Accept me to JetBrains
+            Hire me
           </button>
         </div>
       </div>
