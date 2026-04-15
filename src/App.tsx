@@ -16,9 +16,7 @@ function App() {
           </div>
           <button
             className={style.btn}
-            onClick={() =>
-              window.open("https://i.giphy.com/YZOsKxJfmvzG0.webp", "_blank")
-            }
+            onClick={() => window.open("https://github.com/tjllis", "_blank")}
           >
             Hire me
           </button>
